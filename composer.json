@@ -1,0 +1,45 @@
+{
+    "name": "tarfin-labs/vkn-validation",
+    "description": "VKN Validation",
+    "keywords": [
+        "tarfin-labs",
+        "vkn-validation"
+    ],
+    "homepage": "https://github.com/tarfin-labs/vkn-validation",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Turan Karatuğ",
+            "email": "development@tarfin.co",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.4|^8.0",
+        "ext-json": "*",
+        "guzzlehttp/guzzle": "^7.0",
+        "ext-curl": "*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "TarfinLabs\\VknValidation\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "TarfinLabs\\VknValidation\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    }
+}
