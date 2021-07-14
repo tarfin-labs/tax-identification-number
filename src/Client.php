@@ -39,8 +39,8 @@ class Client
                     'token'     => $token,
                     'jp'        => json_encode([
                         'dogrulama' => [
-                            'vkn1'              => $vkn,
-                            'tckn1'             => '',
+                            'vkn1'              => strlen($vkn) === 10 ? $vkn : '',
+                            'tckn1'             => strlen($vkn) === 11 ? $vkn : '',
                             'iller'             => $cityPlate,
                             'vergidaireleri'    => $taxOfficeNumber,
                         ],
