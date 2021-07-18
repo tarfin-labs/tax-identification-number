@@ -54,10 +54,8 @@ class Validation
      * Validate a vkn.
      *
      * @param int $vkn
-     * @param int $cityPlate
      * @param string $taxOfficeNumber
-     * @return string
-     * @throws GuzzleException
+     * @return object
      * @throws Throwable
      */
     public function validate(int $vkn, string $taxOfficeNumber): object

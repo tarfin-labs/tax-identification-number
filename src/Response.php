@@ -6,7 +6,7 @@ use TarfinLabs\VknValidation\Exceptions\ValidationException;
 
 class Response
 {
-    private $response;
+    private object $response;
 
     public function __construct(string $response)
     {
