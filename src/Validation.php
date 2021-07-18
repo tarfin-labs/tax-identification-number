@@ -18,7 +18,7 @@ class Validation
 
     protected function __clone() {}
 
-    protected function __wakeup()
+    public function __wakeup()
     {
         throw new \Exception('Cannot unserialize a singleton.');
     }
