@@ -19,8 +19,15 @@ composer require tarfin-labs/vkn-validation
 ```php
 use TarfinLabs\VknValidation\Validation;
 
-Validation::init()->getTaxOfficesByCityPlate(34);
-Validation::init()->validate(123123123, 34, '034455');
+$offices = Validation::init()->getTaxOfficesByCityPlate(34);
+$response = Validation::init()->validate(123123123, '034455');
+
+$response->getStatus();
+$response->getTckn();
+$response->getStatusText();
+$response->getTaxNumber();
+$response->getTaxOfficeNumber();
+$response->getCompanyTitle();
 ```
 
 ### Testing
@@ -28,6 +35,9 @@ Validation::init()->validate(123123123, 34, '034455');
 ```bash
 composer test
 ```
+
+### Todo
+- Detailed document will be added. 
 
 ### Changelog
 
