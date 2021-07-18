@@ -3,16 +3,18 @@
 namespace TarfinLabs\VknValidation;
 
 use Exception;
+use GuzzleHttp\Client;
 use GuzzleHttp\Exception\GuzzleException;
 use GuzzleHttp\Exception\RequestException;
+use TarfinLabs\VknValidation\Exceptions\ApiException;
 
-class Client
+class Api
 {
-    public \GuzzleHttp\Client $client;
+    public Client $client;
 
-    public function __construct()
+    public function __construct(?Client $client = null)
     {
-        $this->client = new \GuzzleHttp\Client([
+        $this->client = $client ?? new Client([
             'base_uri' => 'https://ivd.gib.gov.tr',
             'timeout'  => 10,
         ]);
@@ -27,7 +29,7 @@ class Client
      * @return string
      * @throws GuzzleException
      */
-    public function validate(int $vkn, int $cityPlate, string $taxOfficeNumber): string
+    public function validate(int $vkn, string $taxOfficeNumber): string
     {
         try {
             $token = $this->login();
@@ -41,7 +43,6 @@ class Client
                         'dogrulama' => [
                             'vkn1'              => strlen($vkn) === 10 ? $vkn : '',
                             'tckn1'             => strlen($vkn) === 11 ? $vkn : '',
-                            'iller'             => $cityPlate,
                             'vergidaireleri'    => $taxOfficeNumber,
                         ],
                     ]),
@@ -49,7 +50,7 @@ class Client
             ]);
 
             return $response->getBody()->getContents();
-        } catch (RequestException | Exception $e) {
+        } catch (RequestException | ApiException $e) {
             throw $e;
         }
     }
@@ -75,8 +76,8 @@ class Client
 
             $data = json_decode($response->getBody()->getContents(), false);
 
-            if (!isset($data->token)) {
-                throw new Exception('Login failed.');
+            if (isset($data->error)) {
+                throw new ApiException($data->messages[0]->text);
             }
 
             return $data->token;
