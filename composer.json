@@ -18,24 +18,23 @@
     "require": {
         "php": "^7.4|^8.0",
         "ext-json": "*",
-        "guzzlehttp/guzzle": "^7.0",
-        "ext-curl": "*"
+        "guzzlehttp/guzzle": "^7.2"
     },
     "require-dev": {
-        "phpunit/phpunit": "^9.0"
+        "phpunit/phpunit": "^9.4"
     },
     "autoload": {
         "psr-4": {
-            "TarfinLabs\\VknValidation\\": "src"
+            "TarfinLabs\\VknValidation\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "TarfinLabs\\VknValidation\\Tests\\": "tests"
+            "TarfinLabs\\VknValidation\\Tests\\": "tests/"
         }
     },
     "scripts": {
-        "test": "vendor/bin/phpunit",
+        "test": "vendor/bin/phpunit tests/*.php",
         "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
 
     },
