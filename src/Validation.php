@@ -47,7 +47,12 @@ class Validation
     {
         $taxOffices = json_decode(file_get_contents("data/taxoffices.json"), true);
 
-        return $taxOffices[sprintf('%03s', $cityPlate)];
+        return array_map(function ($office) {
+            return [
+                'code' => $office['kod'],
+                'name' => $office['vdadi'],
+            ];
+        }, $taxOffices[sprintf('%03s', $cityPlate)]);
     }
 
     /**
