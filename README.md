@@ -5,7 +5,7 @@
 ![GitHub Actions](https://github.com/tarfin-labs/vkn-validation/actions/workflows/main.yml/badge.svg)
 
 ## Introduction
-With this package you can get tax offices by city plates and validate tax numbers on GIB.
+With this package you can get tax offices by city plates and validate tax numbers on GIB (Gelir İdaresi Başkanlığı).
 
 > This package requires PHP `7.4` or higher.
 
@@ -88,7 +88,3 @@ If you discover any security related issues, please email development@tarfin.com
 ## License
 
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
-
-## PHP Package Boilerplate
-
-This package was generated using the [PHP Package Boilerplate](https://laravelpackageboilerplate.com) by [Beyond Code](http://beyondco.de/).
