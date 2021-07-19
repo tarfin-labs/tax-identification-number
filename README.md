@@ -1,10 +1,13 @@
-# Very short description of the package
+# API Client for Validating Tax Number on GIB.
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/tarfin-labs/vkn-validation.svg?style=flat-square)](https://packagist.org/packages/tarfin-labs/vkn-validation)
 [![Total Downloads](https://img.shields.io/packagist/dt/tarfin-labs/vkn-validation.svg?style=flat-square)](https://packagist.org/packages/tarfin-labs/vkn-validation)
 ![GitHub Actions](https://github.com/tarfin-labs/vkn-validation/actions/workflows/main.yml/badge.svg)
 
-This is where your description should go. Try and limit it to a paragraph or two, and maybe throw in a mention of what PSRs you support to avoid any confusion with users and contributors.
+## Introduction
+With this package you can get tax offices by city plates and validate tax numbers on GIB.
+
+> This package requires PHP `7.4` or higher.
 
 ## Installation
 
@@ -15,19 +18,44 @@ composer require tarfin-labs/vkn-validation
 ```
 
 ## Usage
-
+#### Listing tax offices by city plate:
 ```php
 use TarfinLabs\VknValidation\Validation;
 
 $offices = Validation::init()->getTaxOfficesByCityPlate(34);
-$response = Validation::init()->validate(123123123, '034455');
+```
 
-$response->getStatus();
-$response->getTckn();
-$response->getStatusText();
-$response->getTaxNumber();
-$response->getTaxOfficeNumber();
-$response->getCompanyTitle();
+Output:
+```
+[
+    [
+        "code" => "034XXX",
+        "name" => "TAX OFFICE NAME 1",
+    ],
+    [
+        "code" => "034XXY",
+        "name" => "TAX OFFICE NAME 2
+    ],
+]
+```
+
+#### Validating a tax number:
+
+```php
+use TarfinLabs\VknValidation\Validation;
+
+try {
+    $response = Validation::init()->validate(123123123, '034455');
+    
+    $response->getStatus(); // "1"
+    $response->getTckn(); // ""
+    $response->getStatusText(); // "FAAL"
+    $response->getTaxNumber(); // "123123123"
+    $response->getTaxOfficeNumber(); // "034455"
+    $response->getCompanyTitle(); // "ACME INC."
+} catch (\Throwable $e) {
+    echo $e->getMessage();
+}
 ```
 
 ### Testing
@@ -35,9 +63,6 @@ $response->getCompanyTitle();
 ```bash
 composer test
 ```
-
-### Todo
-- Detailed document will be added. 
 
 ### Changelog
 
