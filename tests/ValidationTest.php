@@ -6,12 +6,33 @@ use GuzzleHttp\Client;
 use GuzzleHttp\Handler\MockHandler;
 use GuzzleHttp\Psr7\Response;
 use PHPUnit\Framework\TestCase;
+use TarfinLabs\VknValidation\Exceptions\NotFoundException;
 use TarfinLabs\VknValidation\Validation;
 use TarfinLabs\VknValidation\Exceptions\ValidationException;
 use TarfinLabs\VknValidation\Exceptions\ApiException;
 
 class ValidationTest extends TestCase
 {
+    public function testCanReturnsTaxOfficesByCityPlate()
+    {
+        $offices = Validation::init()->getTaxOfficesByCityPlate(34);
+
+        $this->assertIsArray($offices);
+
+        foreach ($offices as $office) {
+            $this->assertArrayHasKey('code', $office);
+            $this->assertArrayHasKey('name', $office);
+        }
+    }
+
+    public function testCanHandleNotFoundException()
+    {
+        $this->expectException(NotFoundException::class);
+        $this->expectExceptionMessage('The city plate is not valid!');
+
+        Validation::init()->getTaxOfficesByCityPlate(234);
+    }
+
     public function testCanValidateVkn(): void
     {
         $loginResponse = '{

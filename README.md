@@ -21,8 +21,13 @@ composer require tarfin-labs/vkn-validation
 #### Listing tax offices by city plate:
 ```php
 use TarfinLabs\VknValidation\Validation;
+use TarfinLabs\VknValidation\Exceptions\NotFoundException;
 
-$offices = Validation::init()->getTaxOfficesByCityPlate(34);
+try {
+    $offices = Validation::init()->getTaxOfficesByCityPlate(34);
+} catch (NotFoundException $e) {
+    echo $e->getMessage();
+}
 ```
 
 Output:

@@ -4,6 +4,7 @@ namespace TarfinLabs\VknValidation;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\GuzzleException;
+use TarfinLabs\VknValidation\Exceptions\NotFoundException;
 use Throwable;
 
 class Validation
@@ -42,17 +43,22 @@ class Validation
      *
      * @param int $cityPlate
      * @return array
+     * @throws NotFoundException
      */
     public function getTaxOfficesByCityPlate(int $cityPlate): array
     {
         $taxOffices = json_decode(file_get_contents("data/taxoffices.json"), true);
+
+        if (!$offices = $taxOffices[sprintf('%03s', $cityPlate)] ?? null) {
+            throw new NotFoundException('The city plate is not valid!');
+        }
 
         return array_map(function ($office) {
             return [
                 'code' => $office['kod'],
                 'name' => $office['vdadi'],
             ];
-        }, $taxOffices[sprintf('%03s', $cityPlate)]);
+        }, $offices);
     }
 
     /**
