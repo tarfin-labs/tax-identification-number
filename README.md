@@ -52,6 +52,7 @@ use TarfinLabs\VknValidation\Validation;
 try {
     $response = Validation::init()->validate(123123123, '034455');
     
+    $response->isValid(); // boolean
     $response->getStatus(); // "1"
     $response->getTckn(); // ""
     $response->getStatusText(); // "FAAL"

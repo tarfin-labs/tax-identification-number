@@ -43,6 +43,11 @@ class Response
         return $this->response->unvan;
     }
 
+    public function isValid(): bool
+    {
+        return $this->getStatus() === '1';
+    }
+
     private function parse(string $response): object
     {
         $result = json_decode($response, false);
