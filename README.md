@@ -50,7 +50,7 @@ Output:
 use TarfinLabs\TaxIdentificationNumber\Validation;
 
 try {
-    $response = Validation::init()->validate(123123123, '034455');
+    $response = Validation::init()->validate(1234567890, '034455');
     
     $response->isValid(); // boolean
     $response->getStatus(); // "1"
@@ -59,6 +59,26 @@ try {
     $response->getTaxNumber(); // "123123123"
     $response->getTaxOfficeNumber(); // "034455"
     $response->getCompanyTitle(); // "ACME INC."
+} catch (\Throwable $e) {
+    echo $e->getMessage();
+}
+```
+
+If you want to validate a TCKN for a sole proprietorship, you need to give TCKN (11 characters) as first parameter to `validate()` method.
+
+```php
+use TarfinLabs\TaxIdentificationNumber\Validation;
+
+try {
+    $response = Validation::init()->validate(12345678902, '034455');
+    
+    $response->isValid(); // boolean
+    $response->getStatus(); // "1"
+    $response->getTckn(); // "12345678902"
+    $response->getStatusText(); // "FAAL"
+    $response->getTaxNumber(); // "9999999999"
+    $response->getTaxOfficeNumber(); // "034455"
+    $response->getCompanyTitle(); // "METİN KAYA"
 } catch (\Throwable $e) {
     echo $e->getMessage();
 }
