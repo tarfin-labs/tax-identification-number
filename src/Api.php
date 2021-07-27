@@ -1,12 +1,12 @@
 <?php
 
-namespace TarfinLabs\VknValidation;
+namespace TarfinLabs\TaxIdentificationNumber;
 
 use Exception;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\GuzzleException;
 use GuzzleHttp\Exception\RequestException;
-use TarfinLabs\VknValidation\Exceptions\ApiException;
+use TarfinLabs\TaxIdentificationNumber\Exceptions\ApiException;
 
 class Api
 {

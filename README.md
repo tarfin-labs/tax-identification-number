@@ -1,11 +1,11 @@
-# API Client for Validating Tax Number on GIB.
+# API Client for Validating Tax Identification Number.
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/tarfin-labs/vkn-validation.svg?style=flat-square)](https://packagist.org/packages/tarfin-labs/vkn-validation)
 [![Total Downloads](https://img.shields.io/packagist/dt/tarfin-labs/vkn-validation.svg?style=flat-square)](https://packagist.org/packages/tarfin-labs/vkn-validation)
 ![GitHub Actions](https://github.com/tarfin-labs/vkn-validation/actions/workflows/main.yml/badge.svg)
 
 ## Introduction
-With this package you can get tax offices by city plates and validate tax numbers on GIB (Gelir İdaresi Başkanlığı).
+With this package you can get tax offices by city plates and validate tax identification numbers on GIB (Gelir İdaresi Başkanlığı).
 
 > This package requires PHP `7.4` or higher.
 
@@ -14,14 +14,14 @@ With this package you can get tax offices by city plates and validate tax number
 You can install the package via composer:
 
 ```bash
-composer require tarfin-labs/vkn-validation
+composer require tarfin-labs/tax-identification-number
 ```
 
 ## Usage
 #### Listing tax offices by city plate:
 ```php
-use TarfinLabs\VknValidation\Validation;
-use TarfinLabs\VknValidation\Exceptions\NotFoundException;
+use TarfinLabs\TaxIdentificationNumber\Validation;
+use TarfinLabs\TaxIdentificationNumber\Exceptions\NotFoundException;
 
 try {
     $offices = Validation::init()->getTaxOfficesByCityPlate(34);
@@ -44,10 +44,10 @@ Output:
 ]
 ```
 
-#### Validating a tax number:
+#### Validating a tax identification number:
 
 ```php
-use TarfinLabs\VknValidation\Validation;
+use TarfinLabs\TaxIdentificationNumber\Validation;
 
 try {
     $response = Validation::init()->validate(123123123, '034455');

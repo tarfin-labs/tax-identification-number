@@ -1,9 +1,9 @@
 <?php
 
-namespace TarfinLabs\VknValidation;
+namespace TarfinLabs\TaxIdentificationNumber;
 
 use GuzzleHttp\Client;
-use TarfinLabs\VknValidation\Exceptions\NotFoundException;
+use TarfinLabs\TaxIdentificationNumber\Exceptions\NotFoundException;
 use Throwable;
 
 class Validation

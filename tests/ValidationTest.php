@@ -1,15 +1,15 @@
 <?php
 
-namespace TarfinLabs\VknValidation\Tests;
+namespace TarfinLabs\TaxIdentificationNumber\Tests;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Handler\MockHandler;
 use GuzzleHttp\Psr7\Response;
 use PHPUnit\Framework\TestCase;
-use TarfinLabs\VknValidation\Exceptions\NotFoundException;
-use TarfinLabs\VknValidation\Validation;
-use TarfinLabs\VknValidation\Exceptions\ValidationException;
-use TarfinLabs\VknValidation\Exceptions\ApiException;
+use TarfinLabs\TaxIdentificationNumber\Exceptions\NotFoundException;
+use TarfinLabs\TaxIdentificationNumber\Validation;
+use TarfinLabs\TaxIdentificationNumber\Exceptions\ValidationException;
+use TarfinLabs\TaxIdentificationNumber\Exceptions\ApiException;
 
 class ValidationTest extends TestCase
 {

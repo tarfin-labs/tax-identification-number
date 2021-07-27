@@ -1,16 +1,37 @@
 {
-    "name": "tarfin-labs/vkn-validation",
-    "description": "VKN Validation",
+    "name": "tarfin-labs/tax-identification-number",
+    "description": "API client for validating Tax Identification Number.",
     "keywords": [
         "tarfin-labs",
-        "vkn-validation"
+        "tax identification numver",
+        "tax number validation"
     ],
-    "homepage": "https://github.com/tarfin-labs/vkn-validation",
+    "homepage": "https://github.com/tarfin-labs/tax-identification-number",
     "license": "MIT",
     "type": "library",
     "authors": [
         {
             "name": "Turan Karatuğ",
+            "email": "development@tarfin.co",
+            "role": "Developer"
+        },
+        {
+            "name": "Faruk Can",
+            "email": "development@tarfin.co",
+            "role": "Developer"
+        },
+        {
+            "name": "Yunus Emre Deligöz",
+            "email": "development@tarfin.co",
+            "role": "Developer"
+        },
+        {
+            "name": "Hakan Özdemir",
+            "email": "development@tarfin.co",
+            "role": "Developer"
+        },
+        {
+            "name": "Caner Ergez",
             "email": "development@tarfin.co",
             "role": "Developer"
         }
@@ -25,12 +46,12 @@
     },
     "autoload": {
         "psr-4": {
-            "TarfinLabs\\VknValidation\\": "src/"
+            "TarfinLabs\\TaxIdentificationNumber\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "TarfinLabs\\VknValidation\\Tests\\": "tests/"
+            "TarfinLabs\\TaxIdentificationNumber\\Tests\\": "tests/"
         }
     },
     "scripts": {

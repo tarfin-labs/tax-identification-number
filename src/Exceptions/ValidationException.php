@@ -1,6 +1,6 @@
 <?php
 
-namespace TarfinLabs\VknValidation\Exceptions;
+namespace TarfinLabs\TaxIdentificationNumber\Exceptions;
 
 use Exception;
 

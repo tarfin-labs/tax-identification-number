@@ -1,8 +1,8 @@
 <?php
 
-namespace TarfinLabs\VknValidation;
+namespace TarfinLabs\TaxIdentificationNumber;
 
-use TarfinLabs\VknValidation\Exceptions\ValidationException;
+use TarfinLabs\TaxIdentificationNumber\Exceptions\ValidationException;
 
 class Response
 {
