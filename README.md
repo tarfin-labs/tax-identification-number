@@ -105,10 +105,6 @@ If you discover any security related issues, please email development@tarfin.com
 ## Credits
 
 - [Turan Karatuğ](https://github.com/tkaratug)
-- [Faruk Can](https://github.com/frkcn)
-- [Yunus Emre Deligöz](https://github.com/deligoez)
-- [Hakan Özdemir](https://github.com/hozdemir)
-- [Caner Ergez](https://github.com/CanerErgez)
 - [All Contributors](../../contributors)
 
 ## License

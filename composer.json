@@ -14,30 +14,10 @@
             "name": "Turan Karatuğ",
             "email": "development@tarfin.co",
             "role": "Developer"
-        },
-        {
-            "name": "Faruk Can",
-            "email": "development@tarfin.co",
-            "role": "Developer"
-        },
-        {
-            "name": "Yunus Emre Deligöz",
-            "email": "development@tarfin.co",
-            "role": "Developer"
-        },
-        {
-            "name": "Hakan Özdemir",
-            "email": "development@tarfin.co",
-            "role": "Developer"
-        },
-        {
-            "name": "Caner Ergez",
-            "email": "development@tarfin.co",
-            "role": "Developer"
         }
     ],
     "require": {
-        "php": "^7.4|^8.0",
+        "php": "^7.4|^8.0|^8.1",
         "ext-json": "*",
         "guzzlehttp/guzzle": "^7.2"
     },
