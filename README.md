@@ -1,8 +1,8 @@
 # API Client for Validating Tax Identification Number.
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/tarfin-labs/vkn-validation.svg?style=flat-square)](https://packagist.org/packages/tarfin-labs/vkn-validation)
-[![Total Downloads](https://img.shields.io/packagist/dt/tarfin-labs/vkn-validation.svg?style=flat-square)](https://packagist.org/packages/tarfin-labs/vkn-validation)
-![GitHub Actions](https://github.com/tarfin-labs/vkn-validation/actions/workflows/main.yml/badge.svg)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/tarfin-labs/tax-identification-number.svg?style=flat-square)](https://packagist.org/packages/tarfin-labs/tax-identification-number)
+[![Total Downloads](https://img.shields.io/packagist/dt/tarfin-labs/tax-identification-number.svg?style=flat-square)](https://packagist.org/packages/tarfin-labs/tax-identification-number)
+![GitHub Actions](https://github.com/tarfin-labs/tax-identification-number/actions/workflows/main.yml/badge.svg)
 
 ## Introduction
 With this package you can get tax offices by city plates and validate tax identification numbers on GIB (Gelir İdaresi Başkanlığı).
