@@ -1,5 +1,8 @@
-vendor
+build
 composer.lock
+vendor
+coverage
 .phpunit.result.cache
-.DS_Store
 .idea
+.php-cs-fixer.cache
+.php_cs.cache
