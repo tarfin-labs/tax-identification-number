@@ -52,14 +52,14 @@ class Response
     {
         $result = json_decode($response, false);
 
-        try {
+        if (isset($result->data)) {
             return $result->data;
-        } catch (\Throwable $e) {
-            if (isset($result->error)) {
-                throw new ValidationException($result->messages[0]->text);
-            }
-
-            throw $e;
         }
+
+        if (isset($result->error)) {
+            throw new ValidationException($result->messages[0]->text);
+        }
+
+        throw new ValidationException('Unknown error');
     }
 }

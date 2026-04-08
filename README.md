@@ -7,7 +7,7 @@
 ## Introduction
 With this package you can get tax offices by city plates and validate tax identification numbers on GIB (Gelir İdaresi Başkanlığı).
 
-> This package requires PHP `7.4` or higher.
+> This package requires PHP `8.3` or higher.
 
 ## Installation
 
